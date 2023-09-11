@@ -1,10 +1,12 @@
 package me.dio.copa.catar.notification.scheduler.extensions
 
+import android.annotation.SuppressLint
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
+import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import me.dio.copa.catar.notification.scheduler.R
@@ -13,13 +15,22 @@ private const val CHANNEL_ID = "new_channel_video"
 private const val NOTIFICATION_NAME = "Notificações"
 private const val NOTIFICATION_INTENT_REQUEST_CODE = 0
 
+@SuppressLint("MissingPermission")
 fun Context.showNotification(title: String, content: String) {
     createNotificationChannel()
     val notification = getNotification(title, content)
 
-    NotificationManagerCompat
-        .from(this)
-        .notify(content.hashCode(), notification)
+    val notificationManager = NotificationManagerCompat.from(this)
+
+    if (notificationManager.areNotificationsEnabled()) {
+        notificationManager.notify(
+            content.hashCode(),
+            notification
+        )
+    }
+    else Toast.makeText(this, "Notification Permission is not granted",
+        Toast.LENGTH_SHORT
+    ) .show()
 }
 
 private fun Context.createNotificationChannel() {

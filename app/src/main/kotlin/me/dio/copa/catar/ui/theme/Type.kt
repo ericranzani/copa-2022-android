@@ -12,8 +12,8 @@ val Typography = Typography(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp
-    )
-    /* Other default text styles to override
+    ),
+//  Other default text styles to override
     button = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.W500,
@@ -24,5 +24,23 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp
     )
-    */
 )
+
+val Roboto = FontFamily.Default
+object MatchTextStyle {
+    val titleMedium = TextStyle(
+        fontFamily      = Roboto,
+        fontWeight      = FontWeight.Medium,
+        letterSpacing   = 0.15000000596046448.sp,
+        lineHeight      = 24.sp,
+        fontSize        = 16.sp
+    )
+
+   val titleSmall = TextStyle(
+    fontFamily      = Roboto,
+    fontWeight      = FontWeight.Medium,
+    letterSpacing   = 0.10000000149011612.sp,
+    lineHeight      = 5.sp,
+    fontSize        = 14.sp
+    )
+}

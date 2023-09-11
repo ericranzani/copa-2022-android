@@ -2,7 +2,7 @@ package me.dio.copa.catar.remote.model
 
 import java.util.Date
 
-internal typealias MatchRemote = Match
+typealias MatchRemote = Match
 
 data class Match(
     val name: String,

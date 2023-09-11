@@ -4,13 +4,14 @@ import me.dio.copa.catar.domain.model.MatchDomain
 import me.dio.copa.catar.domain.model.StadiumDomain
 import me.dio.copa.catar.domain.model.Team
 import me.dio.copa.catar.remote.model.MatchRemote
+
 import me.dio.copa.catar.remote.model.StadiumRemote
 import java.time.LocalDateTime
 import java.time.ZoneId
 import java.util.Date
 import java.util.Locale
 
-internal fun List<MatchRemote>.toDomain() = map { it.toDomain() }
+fun List<MatchRemote>.toDomain() = map { it.toDomain() }
 
 fun MatchRemote.toDomain(): MatchDomain {
     return MatchDomain(

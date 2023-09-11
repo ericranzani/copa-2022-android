@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Copa 2022</string>
+    <string name="match_notifier">Match Notifier</string>
+    <string name="match_date_time">Date &amp; Time: %1$s</string>
+    <string name="stadium">Stadium: %1$s</string>
+    <string name="notification_title"> - Starting Now!</string>
+    <string name="description_arrow">Expandable Arrow</string>
+    <string name="description_notification_icon">Notification Icon</string>
 </resources>
